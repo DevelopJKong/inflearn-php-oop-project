@@ -2,14 +2,9 @@
 
 require_once './vendor/autoload.php';
 
-use php_oop_board\Database\Adaptor;
+use php_oop_board\Http\Request;
 
-Adaptor::setup('mysql:dbname=phpblog','root','123456');
+//$_SERVER['REQUEST_METHOD'] = 'GET';
+$_SERVER['PATH_INFO'] = '/posts/write';
 
-class Post
-{
-
-}
-
-$posts= Adaptor::getAll('SELECT* FROM posts LIMIT 3',[],Post::class);
-var_dump($posts);
+var_dump(Request::getPath());
