@@ -2,14 +2,29 @@
 
 require_once './vendor/autoload.php';
 
-use php_oop_board\Session\DatabaseSessionHandler;
-use php_oop_board\Database\Adaptor;
+// 데이터베이스 연결
+// 세션을 켜는 일
+// 에러 핸들러 등록하기
+// 환경 설정하기 ...
+// 이런 부분들을 ServiceProvider에 모두 담을 예정이다
 
-Adaptor::setup('mysql:dbname=phpblog','root','123456');
+use php_oop_board\Support\ServiceProvider;
+use php_oop_board\Application;
 
-session_set_save_handler(new DatabaseSessionHandler());
+class SessionServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        //session_set_save_handler
+    }
 
-session_start();
+    public function boot()
+    {
+        //session_start();
+    }
+}
 
-$_SESSION['message'] = 'Hello, world';
-$_SESSION['foo'] = new stdClass();
+$app = new Applicattion ([
+    SessionServiceProvider::class
+]);
+$app->boot();
