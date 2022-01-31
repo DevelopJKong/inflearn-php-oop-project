@@ -1,13 +1,11 @@
 {
   "name": "developjkong/php_oop_board",
   "description": "description",
-  "minimum-stability": "dev",
-  "license": "ISC",
+  "license": "MIT",
   "version":"0.0.1",
   "authors": [
     {
-      "name": "tbara",
-      "email": "email@example.com"
+      "name": "tbara"
     }
   ],
   "autoload": {
