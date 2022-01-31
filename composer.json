@@ -1,8 +1,6 @@
 {
   "name": "developjkong/php_oop_board",
   "description": "description",
-  "minimum-stability": "stable",
-  "license": "proprietary",
   "version":"0.0.1",
   "authors": [
     {
